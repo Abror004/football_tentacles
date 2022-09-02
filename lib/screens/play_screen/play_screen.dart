@@ -56,13 +56,13 @@ class Game_Page extends StatelessWidget {
 
               if(!controller.checkUpload)
               for(int i=0; i<controller.levelSet.legs.length; i++)
-                aaa(i: i),
+                leg(i: i),
             ],
           );
         }));
   }
 
-  Widget aaa({required int i}) {
+  Widget leg({required int i}) {
     return GetBuilder<GameController>(
         init: GameController(),
         builder: ((controller) {
@@ -107,68 +107,68 @@ class Game_Page extends StatelessWidget {
   }
 
   /// get one leg end its balls
-  Widget getLeg({required int i, required double top, required Sidee sidee}) {
-    if(sidee == Sidee.left) {
-      return Stack(
-        children: [
-          /// leg
-          Positioned(
-            top: top.h,
-            left: Legs.leftLegs[i].left!.w,
-            child: Image.asset(
-              Legs.leftLegs[i].text!,
-              fit: BoxFit.fill,
-              height: Legs.leftLegs[i].height!.h,
-              width: Legs.leftLegs[i].width!.w,
-            ),
-          ),
-
-          /// balls
-          for(int b=0; b<Legs.leftLegs[i].balls.length; b++)
-            Positioned(
-              // top: (Legs.leftLegs[i].top!+Legs.leftLegs[i].balls[b].top).h,
-              top: (top+Legs.leftLegs[i].balls[b].top).h,
-              left: (Legs.leftLegs[i].left!+Legs.leftLegs[i].balls[b].left).w,
-              child: Image.asset(
-                Legs.ball,
-                fit: BoxFit.fill,
-                height: 39.h,
-                width: 39.w,
-              ),
-            ),
-        ],
-      );
-    } else {
-      return Stack(
-        children: [
-          Positioned(
-            // top: Legs.rightLegs[i].top!.h,
-            top: top.h,
-            left: Legs.rightLegs[i].left!.w,
-            child: Image.asset(
-              Legs.rightLegs[i].text!,
-              fit: BoxFit.fill,
-              height: Legs.rightLegs[i].height!.h,
-              width: Legs.rightLegs[i].width!.w,
-            ),
-          ),
-
-          for(int b=0; b<Legs.rightLegs[i].balls.length; b++)
-            Positioned(
-              // top: (Legs.rightLegs[i].top!+Legs.rightLegs[i].balls[b].top).h,
-              top: (top+Legs.rightLegs[i].balls[b].top).h,
-              left: (Legs.rightLegs[i].left!+Legs.rightLegs[i].balls[b].left).w,
-              child: Image.asset(
-                Legs.ball,
-                fit: BoxFit.fill,
-                height: 39.h,
-                width: 39.w,
-              ),
-            ),
-        ],
-      );
-    }
-  }
+  // Widget getLeg({required int i, required double top, required Sidee sidee}) {
+  //   if(sidee == Sidee.left) {
+  //     return Stack(
+  //       children: [
+  //         /// leg
+  //         Positioned(
+  //           top: top.h,
+  //           left: Legs.leftLegs[i].left!.w,
+  //           child: Image.asset(
+  //             Legs.leftLegs[i].text!,
+  //             fit: BoxFit.fill,
+  //             height: Legs.leftLegs[i].height!.h,
+  //             width: Legs.leftLegs[i].width!.w,
+  //           ),
+  //         ),
+  //
+  //         /// balls
+  //         for(int b=0; b<Legs.leftLegs[i].balls.length; b++)
+  //           Positioned(
+  //             // top: (Legs.leftLegs[i].top!+Legs.leftLegs[i].balls[b].top).h,
+  //             top: (top+Legs.leftLegs[i].balls[b].top).h,
+  //             left: (Legs.leftLegs[i].left!+Legs.leftLegs[i].balls[b].left).w,
+  //             child: Image.asset(
+  //               Legs.ball,
+  //               fit: BoxFit.fill,
+  //               height: 39.h,
+  //               width: 39.w,
+  //             ),
+  //           ),
+  //       ],
+  //     );
+  //   } else {
+  //     return Stack(
+  //       children: [
+  //         Positioned(
+  //           // top: Legs.rightLegs[i].top!.h,
+  //           top: top.h,
+  //           left: Legs.rightLegs[i].left!.w,
+  //           child: Image.asset(
+  //             Legs.rightLegs[i].text!,
+  //             fit: BoxFit.fill,
+  //             height: Legs.rightLegs[i].height!.h,
+  //             width: Legs.rightLegs[i].width!.w,
+  //           ),
+  //         ),
+  //
+  //         for(int b=0; b<Legs.rightLegs[i].balls.length; b++)
+  //           Positioned(
+  //             // top: (Legs.rightLegs[i].top!+Legs.rightLegs[i].balls[b].top).h,
+  //             top: (top+Legs.rightLegs[i].balls[b].top).h,
+  //             left: (Legs.rightLegs[i].left!+Legs.rightLegs[i].balls[b].left).w,
+  //             child: Image.asset(
+  //               Legs.ball,
+  //               fit: BoxFit.fill,
+  //               height: 39.h,
+  //               width: 39.w,
+  //             ),
+  //           ),
+  //       ],
+  //     );
+  //   }
+  // }
 
   /// circles / buttons / lines
   Widget dates() {
@@ -300,15 +300,15 @@ class Game_Page extends StatelessWidget {
     }
   }
 
-  Widget positionLine({required double top, required, required Sidee sidee, required Color test}) {
-    return Positioned(
-      left: sidee == Sidee.left ? 0.sw : 0.5.sw,
-      top: top.h,
-      child: Container(
-        color: test,
-        width: 0.5.sw,
-        height: 1.h,
-      ),
-    );
-  }
+  // Widget positionLine({required double top, required, required Sidee sidee, required Color test}) {
+  //   return Positioned(
+  //     left: sidee == Sidee.left ? 0.sw : 0.5.sw,
+  //     top: top.h,
+  //     child: Container(
+  //       color: test,
+  //       width: 0.5.sw,
+  //       height: 1.h,
+  //     ),
+  //   );
+  // }
 }
