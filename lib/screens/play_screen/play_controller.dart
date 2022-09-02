@@ -12,8 +12,8 @@ class GameController extends GetxController {
   int heart = 3;
   bool defeat = false;
   int level = 1;
-  LevelSet levelSet = LevelSet();
-  bool checkUpload = false;
+  LevelSet levelSet = LevelSet(); // oyola holati/malumotlari
+  bool checkUpload = false; // oyoqlani get qvoguncha buttonla bosilmasligi uchun
 
   @override
   void onInit() {
@@ -32,6 +32,7 @@ class GameController extends GetxController {
         //   defeat = true;
         // }
       }
+      Log.log(" ${level}", name: "-------------------------------------------------------------------------------------------------------------------");
       nextLevel();
       update();
     }
@@ -49,8 +50,8 @@ class GameController extends GetxController {
     checkUpload = true;
     levelSet = LevelSet();
     update();
-    levelSet.ballCount = GameElements._getCount();
-    levelSet.legs = GameElements._legs(levelSet.ballCount);
+    levelSet.ballCount = GameElements.getCount();
+    levelSet.legs = GameElements.legs(levelSet.ballCount);
     for(int i=0; i<levelSet.legs.length; i++) {
       Log.log("${levelSet.legs[i].toString()}");
     }
@@ -421,12 +422,12 @@ static void right() {
 
 class GameElements {
 
-  static int _getCount() {
+  static int getCount() {
     Log.log("");
     return ((Random().nextInt(4))+4);
   }
 
-  static List<Leg> _legs(int ballCount) {
+  static List<Leg> legs(int ballCount) {
     //______________________________________
     // get ballCount
     Log.log("ball = ${ballCount}");
@@ -467,7 +468,9 @@ class GameElements {
       for(int i=0; i<testCount-ballCount; i++) {
         int legIndex = Random().nextInt(legs.length);
         if(legs[legIndex].balls.length > 0) {
-          legs[legIndex].balls.removeAt(Random().nextInt(legs[legIndex].balls.length));
+          int ballIndex = Random().nextInt(legs[legIndex].balls.length);
+          Log.log("legs[$legIndex][$ballIndex]", name: "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
+          legs[legIndex].balls.removeAt(ballIndex);
         } else {
           i--;
         }
