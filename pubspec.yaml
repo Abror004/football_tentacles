@@ -44,6 +44,7 @@ flutter:
 
   assets:
     - assets/game_images/
+    - assets/readme/
 
   fonts:
     - family: Inter
