@@ -5,8 +5,6 @@ class _StorageKeys {
   static const SOUND = 'SOUND';
   static const VIBRATION = 'VIBRATION';
   static const LEVEL1 = 'LEVEL1';
-  static const LEVEL2 = 'LEVEL2';
-  static const LEVEL3 = 'LEVEL3';
 
 }
 class DBService{
