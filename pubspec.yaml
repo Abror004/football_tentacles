@@ -21,6 +21,7 @@ dependencies:
   hive: ^2.2.3
   hive_flutter: ^1.1.0
   vibration: ^1.7.5
+  flutter_launcher_icons: ^0.10.0
 
 dev_dependencies:
   flutter_test:
@@ -32,12 +33,18 @@ flutter:
 
   uses-material-design: true
 
+
+#flutter_icons:
+#  android: true
+#  ios: true
+#  image_path: "assets/logo/default.png"
+#  image_path_ios: "assets/logo/default.png"
+#  adaptive_icon_background: "assets/logo/background.png"
+#  adaptive_icon_foreground: "assets/logo/foreground.png"
+
   assets:
     - assets/game_images/
-#    - assets/images/level1_image/
-#    - assets/images/level2_image/
-#    - assets/images/level3_image/
-#    - assets/music/
+
   fonts:
     - family: Inter
       fonts:

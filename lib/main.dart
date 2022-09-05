@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:football_tentacles/screens/play_screen/play_screen.dart';
+import 'package:football_tentacles/screens/home_screen/home_screen.dart';
 import 'package:football_tentacles/services/db_service.dart';
 import 'package:football_tentacles/services/di_service.dart';
 import 'package:football_tentacles/services/lang_service.dart';
@@ -34,11 +34,10 @@ class MyApp extends StatelessWidget {
       splitScreenMode: false,
       builder: (context, child) =>
           GetMaterialApp(
-            // supportedLocales: LangService.locales,
             debugShowCheckedModeBanner: false,
             title: 'Game',
             initialBinding: DIService(),
-            home: const Game_Page(),
+            home: const HomePage(),
             translations: LangService(),
             locale: LangService.locale,
             fallbackLocale: LangService.fallbackLocale,
